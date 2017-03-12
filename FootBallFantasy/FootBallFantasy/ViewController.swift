@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        FFNetworkManager().getAvailableSeasons(sortType: "") { (array, error) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

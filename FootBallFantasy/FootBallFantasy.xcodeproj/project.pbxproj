@@ -16,6 +16,10 @@
 		466FB4A61E75189C00D7CD41 /* FootBallFantasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4A51E75189C00D7CD41 /* FootBallFantasyTests.swift */; };
 		466FB4B11E75189C00D7CD41 /* FootBallFantasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4B01E75189C00D7CD41 /* FootBallFantasyUITests.swift */; };
 		466FB4C01E751D8D00D7CD41 /* FFAvailableSeasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4BF1E751D8D00D7CD41 /* FFAvailableSeasonVC.swift */; };
+		466FB4CB1E751F8200D7CD41 /* FFHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4C81E751F8200D7CD41 /* FFHTTPRequest.swift */; };
+		466FB4CC1E751F8200D7CD41 /* FFHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4C91E751F8200D7CD41 /* FFHTTPResponse.swift */; };
+		466FB4CD1E751F8200D7CD41 /* FFNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4CA1E751F8200D7CD41 /* FFNetworkManager.swift */; };
+		46FFB2F01E75267300540A5F /* FFAvailableSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FFB2EF1E75267300540A5F /* FFAvailableSeason.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		466FB4B01E75189C00D7CD41 /* FootBallFantasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootBallFantasyUITests.swift; sourceTree = "<group>"; };
 		466FB4B21E75189C00D7CD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466FB4BF1E751D8D00D7CD41 /* FFAvailableSeasonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFAvailableSeasonVC.swift; sourceTree = "<group>"; };
+		466FB4C81E751F8200D7CD41 /* FFHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHTTPRequest.swift; sourceTree = "<group>"; };
+		466FB4C91E751F8200D7CD41 /* FFHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHTTPResponse.swift; sourceTree = "<group>"; };
+		466FB4CA1E751F8200D7CD41 /* FFNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFNetworkManager.swift; sourceTree = "<group>"; };
+		46FFB2EF1E75267300540A5F /* FFAvailableSeason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFAvailableSeason.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 				466FB4991E75189C00D7CD41 /* LaunchScreen.storyboard */,
 				466FB49C1E75189C00D7CD41 /* Info.plist */,
 				466FB4941E75189C00D7CD41 /* FootBallFantasy.xcdatamodeld */,
+				46FFB2EE1E75263F00540A5F /* FFModel */,
 				466FB4C11E751EA100D7CD41 /* FFNetwork */,
 				466FB4BE1E75191000D7CD41 /* FFViewControllers */,
 			);
@@ -143,8 +152,19 @@
 		466FB4C11E751EA100D7CD41 /* FFNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				466FB4C81E751F8200D7CD41 /* FFHTTPRequest.swift */,
+				466FB4C91E751F8200D7CD41 /* FFHTTPResponse.swift */,
+				466FB4CA1E751F8200D7CD41 /* FFNetworkManager.swift */,
 			);
 			name = FFNetwork;
+			sourceTree = "<group>";
+		};
+		46FFB2EE1E75263F00540A5F /* FFModel */ = {
+			isa = PBXGroup;
+			children = (
+				46FFB2EF1E75267300540A5F /* FFAvailableSeason.swift */,
+			);
+			name = FFModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FFB2F01E75267300540A5F /* FFAvailableSeason.swift in Sources */,
+				466FB4CB1E751F8200D7CD41 /* FFHTTPRequest.swift in Sources */,
+				466FB4CC1E751F8200D7CD41 /* FFHTTPResponse.swift in Sources */,
 				466FB4961E75189C00D7CD41 /* FootBallFantasy.xcdatamodeld in Sources */,
 				466FB4901E75189C00D7CD41 /* ViewController.swift in Sources */,
+				466FB4CD1E751F8200D7CD41 /* FFNetworkManager.swift in Sources */,
 				466FB48E1E75189C00D7CD41 /* AppDelegate.swift in Sources */,
 				466FB4C01E751D8D00D7CD41 /* FFAvailableSeasonVC.swift in Sources */,
 			);
@@ -531,6 +555,7 @@
 				466FB4B71E75189C00D7CD41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		466FB4B81E75189C00D7CD41 /* Build configuration list for PBXNativeTarget "FootBallFantasyTests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +564,7 @@
 				466FB4BA1E75189C00D7CD41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		466FB4BB1E75189C00D7CD41 /* Build configuration list for PBXNativeTarget "FootBallFantasyUITests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +573,7 @@
 				466FB4BD1E75189C00D7CD41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -26,4 +26,29 @@ class FFAvailableSeasonVC: UIViewController, UICollectionViewDelegate, UICollect
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //==========================================================================================================
+    // MARK : UICollectionView
+    //==========================================================================================================
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+     
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+        
+        
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
 }
