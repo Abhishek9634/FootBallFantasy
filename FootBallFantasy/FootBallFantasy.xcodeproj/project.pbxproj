@@ -15,6 +15,7 @@
 		466FB49B1E75189C00D7CD41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466FB4991E75189C00D7CD41 /* LaunchScreen.storyboard */; };
 		466FB4A61E75189C00D7CD41 /* FootBallFantasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4A51E75189C00D7CD41 /* FootBallFantasyTests.swift */; };
 		466FB4B11E75189C00D7CD41 /* FootBallFantasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4B01E75189C00D7CD41 /* FootBallFantasyUITests.swift */; };
+		466FB4C01E751D8D00D7CD41 /* FFAvailableSeasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4BF1E751D8D00D7CD41 /* FFAvailableSeasonVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		466FB4AC1E75189C00D7CD41 /* FootBallFantasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootBallFantasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		466FB4B01E75189C00D7CD41 /* FootBallFantasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootBallFantasyUITests.swift; sourceTree = "<group>"; };
 		466FB4B21E75189C00D7CD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		466FB4BF1E751D8D00D7CD41 /* FFAvailableSeasonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFAvailableSeasonVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				466FB48D1E75189C00D7CD41 /* AppDelegate.swift */,
-				466FB48F1E75189C00D7CD41 /* ViewController.swift */,
 				466FB4911E75189C00D7CD41 /* Main.storyboard */,
 				466FB4971E75189C00D7CD41 /* Assets.xcassets */,
 				466FB4991E75189C00D7CD41 /* LaunchScreen.storyboard */,
 				466FB49C1E75189C00D7CD41 /* Info.plist */,
 				466FB4941E75189C00D7CD41 /* FootBallFantasy.xcdatamodeld */,
+				466FB4C11E751EA100D7CD41 /* FFNetwork */,
+				466FB4BE1E75191000D7CD41 /* FFViewControllers */,
 			);
 			path = FootBallFantasy;
 			sourceTree = "<group>";
@@ -126,6 +129,22 @@
 				466FB4B21E75189C00D7CD41 /* Info.plist */,
 			);
 			path = FootBallFantasyUITests;
+			sourceTree = "<group>";
+		};
+		466FB4BE1E75191000D7CD41 /* FFViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				466FB48F1E75189C00D7CD41 /* ViewController.swift */,
+				466FB4BF1E751D8D00D7CD41 /* FFAvailableSeasonVC.swift */,
+			);
+			name = FFViewControllers;
+			sourceTree = "<group>";
+		};
+		466FB4C11E751EA100D7CD41 /* FFNetwork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FFNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +215,7 @@
 				TargetAttributes = {
 					466FB4891E75189C00D7CD41 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					466FB4A01E75189C00D7CD41 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -265,6 +284,7 @@
 				466FB4961E75189C00D7CD41 /* FootBallFantasy.xcdatamodeld in Sources */,
 				466FB4901E75189C00D7CD41 /* ViewController.swift in Sources */,
 				466FB48E1E75189C00D7CD41 /* AppDelegate.swift in Sources */,
+				466FB4C01E751D8D00D7CD41 /* FFAvailableSeasonVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FootBallFantasy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.FootBallFantasy;
@@ -428,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FootBallFantasy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Abhishek.FootBallFantasy;
