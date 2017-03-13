@@ -9,24 +9,24 @@
 import UIKit
 
 enum REQUEST_URL : NSString {
-    case BASE_URL = "http://soccer.sportsopendata.net"
-    case AVAILABLE_SEASON = "/v1/leagues/serie-a/seasons"
+    case BASE_URL = "https://api.crowdscores.com/v1"
+    case TEAMS = "/teams"
 }
 
 class FFNetworkManager: NSObject {
     
     public var responseArray : NSMutableArray?
-    public var seasonList : NSArray?
+    public var teamList : NSArray?
     
     
     //====================================================================================================================================
     // GET PLAYERS METHOD
     //====================================================================================================================================
     
-    public func getAvailableSeasons(sortType:NSString, completion : @escaping (_ articleArray:NSArray?, _ error:NSError?) -> Void) {
+    public func getAvailableSeasons(completion : @escaping (_ articleArray:NSArray?, _ error:NSError?) -> Void) {
         
-        let URLString : String = "http://api.football-data.org/v1/competitions/?season=2015"
-//        let URLString : String = "http://soccer.sportsopendata.net/v1/leagues/serie-a/seasons"
+        let URLString : String = NSString(format: "%@%@", REQUEST_URL.BASE_URL.rawValue, REQUEST_URL.TEAMS.rawValue) as String
+        
         let request : NSMutableURLRequest = FFHTTPRequest.getServerRequest(urlString: URLString, paramString: nil)
         FFHTTPResponse.responseWithRequest(request: request, requestTitle: "FETCH_SEASONS", completion: { (json, error) in
             
@@ -34,13 +34,14 @@ class FFNetworkManager: NSObject {
             self.responseArray = NSMutableArray()
             if (error == nil)
             {
-//                let dictionary : [String:Any] = json as! [String : Any]
-//                self.seasonList = NSArray(array: dictionary["seasons"] as! NSArray)
-//                for seasonDict in self.seasonList as! [[String:Any]] {
-//                
-//                    let player = FFAvailableSeason(dictionary: seasonDict)
-//                    self.responseArray?.add(player)
-//                }
+                let teamList : [Any] = json as! [Any]
+                self.teamList = NSArray(array: teamList as NSArray)
+                for teamObject in self.teamList as! [[String:Any]] {
+                
+                    let team = FFTeams(dictionary: teamObject)
+                    print("TEAM_NAME : \(team.name!)")
+                    self.responseArray?.add(team)
+                }
             }
             completion(self.responseArray!, error)
         })

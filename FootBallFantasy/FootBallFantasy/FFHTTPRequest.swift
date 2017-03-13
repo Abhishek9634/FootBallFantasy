@@ -8,6 +8,8 @@
 
 import UIKit
 
+var AUTH_KEY : NSString = "00bb66dbb7a84e179b7307cc5ef3c79d"
+
 class FFHTTPRequest: NSObject {
 
     //====================================================================================================================================
@@ -19,7 +21,7 @@ class FFHTTPRequest: NSObject {
         let requestURL = URL(string:urlString)!
         let request = NSMutableURLRequest(url:requestURL)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        self.setHeader(request: request)
         request.httpBody = paramString?.data(using: String.Encoding.utf8)
         
         return request
@@ -37,9 +39,15 @@ class FFHTTPRequest: NSObject {
         }
         let requestURL = URL(string:URLString)!
         let request = NSMutableURLRequest(url:requestURL)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"        
+        self.setHeader(request: request)
+        request.httpMethod = "GET"
+        
         return request
+    }
+    
+    class func setHeader(request: NSMutableURLRequest) {
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(AUTH_KEY as String, forHTTPHeaderField: "x-crowdscores-api-key")
     }
     
 }
