@@ -19,6 +19,7 @@
 		466FB4CB1E751F8200D7CD41 /* FFHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4C81E751F8200D7CD41 /* FFHTTPRequest.swift */; };
 		466FB4CC1E751F8200D7CD41 /* FFHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4C91E751F8200D7CD41 /* FFHTTPResponse.swift */; };
 		466FB4CD1E751F8200D7CD41 /* FFNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FB4CA1E751F8200D7CD41 /* FFNetworkManager.swift */; };
+		46D5EC7F1E768CA600406B29 /* FFTeamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D5EC7E1E768CA600406B29 /* FFTeamPlayer.swift */; };
 		46FFB2F01E75267300540A5F /* FFTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FFB2EF1E75267300540A5F /* FFTeams.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		466FB4C81E751F8200D7CD41 /* FFHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHTTPRequest.swift; sourceTree = "<group>"; };
 		466FB4C91E751F8200D7CD41 /* FFHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHTTPResponse.swift; sourceTree = "<group>"; };
 		466FB4CA1E751F8200D7CD41 /* FFNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFNetworkManager.swift; sourceTree = "<group>"; };
+		46D5EC7E1E768CA600406B29 /* FFTeamPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTeamPlayer.swift; sourceTree = "<group>"; };
 		46FFB2EF1E75267300540A5F /* FFTeams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTeams.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				46FFB2EF1E75267300540A5F /* FFTeams.swift */,
+				46D5EC7E1E768CA600406B29 /* FFTeamPlayer.swift */,
 			);
 			name = FFModel;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				466FB4961E75189C00D7CD41 /* FootBallFantasy.xcdatamodeld in Sources */,
 				466FB4901E75189C00D7CD41 /* ViewController.swift in Sources */,
 				466FB4CD1E751F8200D7CD41 /* FFNetworkManager.swift in Sources */,
+				46D5EC7F1E768CA600406B29 /* FFTeamPlayer.swift in Sources */,
 				466FB48E1E75189C00D7CD41 /* AppDelegate.swift in Sources */,
 				466FB4C01E751D8D00D7CD41 /* FFAvailableSeasonVC.swift in Sources */,
 			);

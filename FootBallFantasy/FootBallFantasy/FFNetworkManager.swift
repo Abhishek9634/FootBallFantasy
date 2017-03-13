@@ -8,10 +8,8 @@
 
 import UIKit
 
-enum REQUEST_URL : NSString {
-    case BASE_URL = "https://api.crowdscores.com/v1"
-    case TEAMS = "/teams"
-}
+var BASE_URL: NSString = "https://api.crowdscores.com/v1"
+var TEAMS: NSString  = "/teams"
 
 class FFNetworkManager: NSObject {
     
@@ -20,15 +18,15 @@ class FFNetworkManager: NSObject {
     
     
     //====================================================================================================================================
-    // GET PLAYERS METHOD
+    // FETCH ALL TEAMS
     //====================================================================================================================================
     
-    public func getAvailableSeasons(completion : @escaping (_ articleArray:NSArray?, _ error:NSError?) -> Void) {
+    public func getTeams(completion : @escaping (_ articleArray:NSArray?, _ error:NSError?) -> Void) {
         
-        let URLString : String = NSString(format: "%@%@", REQUEST_URL.BASE_URL.rawValue, REQUEST_URL.TEAMS.rawValue) as String
+        let URLString = NSString(format: "%@%@", BASE_URL, TEAMS) as String
         
         let request : NSMutableURLRequest = FFHTTPRequest.getServerRequest(urlString: URLString, paramString: nil)
-        FFHTTPResponse.responseWithRequest(request: request, requestTitle: "FETCH_SEASONS", completion: { (json, error) in
+        FFHTTPResponse.responseWithRequest(request: request, requestTitle: "FETCH_TEAMS", completion: { (json, error) in
             
             print("ERROR(IF-ANY) :: \(error?.localizedDescription)")
             self.responseArray = NSMutableArray()
@@ -44,6 +42,39 @@ class FFNetworkManager: NSObject {
                 }
             }
             completion(self.responseArray!, error)
+        })
+    }
+    
+    //====================================================================================================================================
+    // FETCH TEAM DETAILS
+    //====================================================================================================================================
+    
+    public func getTeamDetails(teamId: NSNumber, completion : @escaping ( _ teamDetail: FFTeams?, _ playerList: NSMutableArray?, _ error: NSError?) -> Void) {
+        
+        let URLString = NSString(format: "%@%@/%@", BASE_URL, TEAMS, teamId) as String
+        
+        let request : NSMutableURLRequest = FFHTTPRequest.getServerRequest(urlString: URLString, paramString: nil)
+        FFHTTPResponse.responseWithRequest(request: request, requestTitle: "FETCH_TEAM_PLAYER", completion: { (json, error) in
+            
+            var teamDetail : FFTeams? = nil
+            let playersArray = NSMutableArray()
+            
+            print("ERROR(IF-ANY) :: \(error?.localizedDescription)")
+            if (error == nil)
+            {
+                let teamDict : [String:Any] = json as! [String:Any]
+                teamDetail = FFTeams(dictionary: teamDict)
+                let playersList = teamDict["players"] as! [[String:Any]]
+                
+                for player in playersList {
+                    
+                    let teamPlayer = FFTeamPlayer(dictionary: player)
+                    print("XX_NAME \(teamPlayer.pl_name!)")
+                    playersArray.add(teamPlayer)
+                }
+            }
+            
+            completion(teamDetail, playersArray, error)
         })
     }
 }

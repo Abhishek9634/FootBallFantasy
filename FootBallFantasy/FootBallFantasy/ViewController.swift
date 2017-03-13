@@ -14,7 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        FFNetworkManager().getAvailableSeasons() { (array, error) in
+        
+//        FFNetworkManager().getTeams() { (array, error) in
+//            
+//        }
+        
+        FFNetworkManager().getTeamDetails(teamId: NSNumber(value: 1851)) { (team, list, error) in
             
         }
     }
